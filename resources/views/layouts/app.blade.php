@@ -31,9 +31,9 @@
       <a  class="nav-link @if($locale == 'en') @endif" href="{{ route('lang', 'en') }}">EN</a>
       <a  class="nav-link" href="{{ route('lang', 'fr') }}">FR</a>
     </nav>
+    <h2 class="display-1 ">@lang('lang.welcome') Maisonneuve</h2>
   </div>
 </div>
-<h1 class="display-1 ">@lang('lang.welcome') Maisonneuve</h1>
     @yield('content')
 
 <!-- <footer class="text-center text-white fixed-bottom bg-dark mt-4" >
