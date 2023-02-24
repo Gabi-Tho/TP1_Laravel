@@ -33,15 +33,6 @@
                     <input type="password" id="form2Example27" class="form-control form-control-lg" placeholder="password" />
                   </div>
 
-                  <div class="form-group ">
-                      <select class="form-control mt-2" id="ville" name="ville_id" >
-                        <option selected>choose your city</option>
-                      @foreach($villes as $ville)
-                        <option value="{{ $ville->id }}">{{ $ville->ville }}</option>
-                      @endforeach
-                      </select>
-                  </div>
-
                   <div class="pt-1 mb-4 pt-3">
                     <button class="btn btn-dark btn-lg btn-block" type="button">Register</button>
                   </div>

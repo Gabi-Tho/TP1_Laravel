@@ -8,5 +8,6 @@ return [
 'login' => 'login',
 'register' => 'register',
 //titles\\
-'welcome' => 'welcomezzzz'
+'welcome' => 'welcome'
 ];
+

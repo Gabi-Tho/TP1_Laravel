@@ -16,20 +16,24 @@
 <div class="card bg-dark text-white " style="height: 18rem;">
   <img class="" style="height: 18rem;" src="{{ asset('css/img/alienBanner.jpg')}}"> 
   <div class="card-img-overlay h-20">
-    <h1 class="display-1 ">@lang('lang.welcome') Maisonneuve</h1>
-    <p class="lead">https://github.com/Gabi-Tho/TP_1</p>
-    <nav class="position-absolute bottom-0 p-2 display-6">
-      <a  class="text-decoration-none btn btn-light " href="{{ route('user.index') }}"><p>@lang('lang.home')</p></a>
-      <a  class="text-decoration-none btn btn-light" href="{{ route('user.show') }}">FORUM</a>
-      <a  class="text-decoration-none btn btn-light" href="{{ route('login') }}">LOGIN</a>
-      <a  class="text-decoration-none btn btn-light" href="{{ route('user.create') }}">REGISTER</a>
+    <nav class="navbar-nav">
 
-      <a  class="text-decoration-none btn btn-light p-3 @if($locale == 'en') @endif" href="{{ route('lang', 'en') }}">EN</a>
-      <a  class="text-decoration-none btn btn-light p-3" href="{{ route('lang', 'fr') }}">FR</a>
+      <a  class="nav-link" href="{{ route('user.index') }}">@lang('lang.home')</a>
+
+      @guest
+      <a  class="nav-link" href="{{ route('login') }}">LOGIN</a>
+      <a  class="nav-link" href="{{ route('user.create') }}">REGISTER</a>
+      @else
+      <a  class="nav-link" href="{{ route('user.show') }}">FORUM</a>
+      <a  class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
+      @endguest
+
+      <a  class="nav-link @if($locale == 'en') @endif" href="{{ route('lang', 'en') }}">EN</a>
+      <a  class="nav-link" href="{{ route('lang', 'fr') }}">FR</a>
     </nav>
   </div>
 </div>
-
+<h1 class="display-1 ">@lang('lang.welcome') Maisonneuve</h1>
     @yield('content')
 
 <!-- <footer class="text-center text-white fixed-bottom bg-dark mt-4" >

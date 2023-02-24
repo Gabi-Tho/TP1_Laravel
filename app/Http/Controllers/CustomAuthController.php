@@ -51,7 +51,7 @@ class CustomAuthController extends Controller
 
         $user = new User;
         $user->fill($request->all());
-        // $user->password = Hash::make($request->password);
+        $user->password = Hash::make($request->password);
         $user->save();
 
 

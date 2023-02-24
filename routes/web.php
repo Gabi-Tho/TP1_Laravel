@@ -48,8 +48,8 @@ Route::delete('edit/{etudiant}',   [EtudiantController::class,'destroy']);
 
 Route::get('/', [UserController::class,'index'])->name('user.index');
 Route::get('forum', [UserController::class,'show'])->name('user.show');
-Route::get('register-user', [UserController::class,'create'])->name('user.create');
-Route::post('register-user', [UserController::class,'store'])->name('user.store');
+// Route::get('register-user', [UserController::class,'create'])->name('user.create');
+// Route::post('register-user', [UserController::class,'store'])->name('user.store');
 
 
 //====================================== AuthController =====================================\\
@@ -59,7 +59,7 @@ Route::post('login',[CustomAuthController::class, 'authentication'])->name('user
 Route::get('logout',[CustomAuthController::class, 'logout'])->name('logout');
 Route::get('dashboard',[CustomAuthController::class, 'dashboard'])->name('dashboard');
 
-Route::get('register', [CustomAuthController::class,'create'])->name('auth.create');
+Route::get('register', [CustomAuthController::class,'create'])->name('user.create');
 Route::post('register',[CustomAuthController::class, 'store'])->name('user.store');
 
 
