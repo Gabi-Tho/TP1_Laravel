@@ -5,18 +5,18 @@
 
 
 
-<section class="vh-100" style="background-color: #9A616D;">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
+<section class="vh-60" style="background-color:#1aaf00">
+  <div class="container py-5 h-60" >
+    <div class="row d-flex justify-content-center align-items-center h-60">
       <div class="col col-xl-10">
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
-            <div class="col-md-6 col-lg-5 d-none d-md-block img-fluid">
+            <div class="col-md-6 col-lg-5 d-none d-md-block img-fluid" style="background-color:#1aaf00">
               <img src="{{ asset('css/img/alien_standsmall.png')}}"
                 alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
             </div>
-            <div class="col-md-6 col-lg-7 d-flex align-items-center">
-              <div class="card-body p-4 p-lg-5 text-black">
+            <div class="col-md-6 col-lg-7 d-flex align-items-center" style="background-color:#1aaf00">
+              <div class="card-body p-4 p-lg-5 text-black" style="background-color:#1aaf00">
 
                 <form action="{{route('user.auth')}}" method="post">
                 @csrf

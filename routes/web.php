@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\UserController;
@@ -47,10 +48,7 @@ Route::delete('edit/{etudiant}',   [EtudiantController::class,'destroy']);
 //====================================== UserController =====================================\\
 
 Route::get('/', [UserController::class,'index'])->name('user.index');
-Route::get('forum', [UserController::class,'show'])->name('user.show');
-// Route::get('register-user', [UserController::class,'create'])->name('user.create');
-// Route::post('register-user', [UserController::class,'store'])->name('user.store');
-
+Route::post('forum', [UserController::class,'show'])->name('user.show');
 
 //====================================== AuthController =====================================\\
 
@@ -66,3 +64,13 @@ Route::post('register',[CustomAuthController::class, 'store'])->name('user.store
 //====================================== Languages =====================================\\
 
 Route::get('lang/{locale}',[LocalizationController::class, 'index'])->name('lang');
+
+
+//=================================== Forum Controller =================================\\
+
+Route::get('forum', [ForumController::class,'create'])->name('user.show');
+Route::post('forum', [ForumController::class,'store'])->name('forum.store');
+
+Route::get('index', [ForumController::class,'index'])->name('forum.index');
+
+

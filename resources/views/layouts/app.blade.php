@@ -24,7 +24,8 @@
       <a  class="nav-link" href="{{ route('login') }}">LOGIN</a>
       <a  class="nav-link" href="{{ route('user.create') }}">REGISTER</a>
       @else
-      <a  class="nav-link" href="{{ route('user.show') }}">FORUM</a>
+      <a  class="nav-link" href="{{ route('user.show') }}">YOUR ARTICLES</a>
+      <a  class="nav-link" href="{{ route('user.show') }}">ALL ARTICLES</a>
       <a  class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
       @endguest
 

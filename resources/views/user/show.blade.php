@@ -5,18 +5,23 @@
 
 <div class="container mt-5">
     
-    <h3>contribute to our forum</h3>
+    <h3>contribute to alien contact</h3>
     
     <hr>
-    <form>
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Title</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <form method="post" action="{{route('forum.store')}}">
+    @csrf
+      <div class="form-group pt-3">
+        <input type="text" class="form-control" id="title" name="title" placeholder="title for the alien message">
       </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+      <div class="form-group pt-3">
+        <textarea class="form-control" id="article" rows="3" name="article" placeholder="write to the aliens"></textarea>
       </div>
+
+      <div class="form-group pt-3">
+          <input type="submit" value="submit" >
+      </div>
+
     </form>
     <hr>
 </div>
