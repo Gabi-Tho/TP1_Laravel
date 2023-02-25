@@ -39,7 +39,7 @@ class ForumController extends Controller
                         ->where('forum_user_id', '=', $user_id );
             
         
-            // return redirect(route('forum.index', $newArticle->id,));
+            return redirect(route('forum.index'));
 
     }
 
@@ -51,12 +51,20 @@ class ForumController extends Controller
 
     }
 
-    // public function destroy(Forum $article)
-    // {
-    //     $article->delete();
+    public function destroy(Forum $article)
+    {
 
-    //     return redirect(route('forum.index'));
-    // }
+        dd($article);
+        $article->delete();
+
+        return redirect(route('forum.index'));
+    }
+
+    public function edit(Forum $article){
+        
+
+        return view('forum.edit', ['article'=>$article]);
+    }
 
 
 

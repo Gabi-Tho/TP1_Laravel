@@ -71,6 +71,7 @@ Route::get('lang/{locale}',[LocalizationController::class, 'index'])->name('lang
 Route::get('forum', [ForumController::class,'create'])->name('user.show');
 Route::post('forum', [ForumController::class,'store'])->name('forum.store');
 Route::get('index', [ForumController::class,'index'])->name('forum.index');
-// Route::get('destroy', [ForumController::class,'destroy']);
+Route::get('forum.edit/{article}', [ForumController::class,'edit'])->name('forum.edit');
+
 
 
