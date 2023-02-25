@@ -14,9 +14,12 @@ class ForumController extends Controller
     public function create()
     {   
 
+        $user_id = Auth::user()->id;
 
-        return view('user.show');
+        $articles = Forum::all()
+        ->where('forum_user_id', '=', $user_id );
 
+        return view('user.show', ['articles'=>$articles]);
     }
 
 
@@ -24,6 +27,7 @@ class ForumController extends Controller
     public function store(Request $request)
     {
 
+        $user_id = Auth::user()->id;
 
             $newArticle = Forum::create([
                 'title' => $request->title,
@@ -31,13 +35,29 @@ class ForumController extends Controller
                 'forum_user_id' => Auth::user()->id
             ]);
 
-            return redirect(route('forum.index', $newArticle->id));
-            // return $request;
+            $articles = Forum::all()
+                        ->where('forum_user_id', '=', $user_id );
+            
+        
+            // return redirect(route('forum.index', $newArticle->id,));
+
     }
 
 
     public function index(){
-        return view('user.index');
+
+        $articles = Forum::all();
+        return view('forum.index', ['articles'=>$articles]);
+
     }
+
+    // public function destroy(Forum $article)
+    // {
+    //     $article->delete();
+
+    //     return redirect(route('forum.index'));
+    // }
+
+
 
 }

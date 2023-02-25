@@ -13,6 +13,7 @@
 </head>
 <body>
 @php $locale = session()->get('locale'); @endphp
+<h2 class="display-1 text-center ">@lang('lang.welcome') Maisonneuve</h2>
 <div class="card bg-dark text-white " style="height: 18rem;">
   <img class="" style="height: 18rem;" src="{{ asset('css/img/alienBanner.jpg')}}"> 
   <div class="card-img-overlay h-20">
@@ -25,14 +26,14 @@
       <a  class="nav-link" href="{{ route('user.create') }}">REGISTER</a>
       @else
       <a  class="nav-link" href="{{ route('user.show') }}">YOUR ARTICLES</a>
-      <a  class="nav-link" href="{{ route('user.show') }}">ALL ARTICLES</a>
+      <a  class="nav-link" href="{{ route('forum.index') }}">ALL ARTICLES</a>
       <a  class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
       @endguest
 
       <a  class="nav-link @if($locale == 'en') @endif" href="{{ route('lang', 'en') }}">EN</a>
       <a  class="nav-link" href="{{ route('lang', 'fr') }}">FR</a>
     </nav>
-    <h2 class="display-1 ">@lang('lang.welcome') Maisonneuve</h2>
+
   </div>
 </div>
     @yield('content')
