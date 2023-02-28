@@ -38,33 +38,39 @@ class ForumController extends Controller
             $articles = Forum::all()
                         ->where('forum_user_id', '=', $user_id );
             
-        
             return redirect(route('forum.index'));
 
     }
 
 
     public function index(){
-
         $articles = Forum::all();
         return view('forum.index', ['articles'=>$articles]);
-
     }
 
     public function destroy(Forum $article)
     {
-
-        dd($article);
         $article->delete();
-
         return redirect(route('forum.index'));
     }
 
     public function edit(Forum $article){
-        
-
         return view('forum.edit', ['article'=>$article]);
     }
+
+    public function update(Request $request, Forum $article){
+
+        $article->update([
+
+            'title'=>$request->title,
+            'article'=>$request->article,
+
+        ]);
+
+        return redirect(route('user.show', $article->id ));
+        
+    }
+
 
 
 

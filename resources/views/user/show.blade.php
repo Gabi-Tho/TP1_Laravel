@@ -3,23 +3,24 @@
 @section('content')
 
 
+
 <div class="container mt-5">
     
-    <h3>contribute to alien contact</h3>
+    <h3>@lang('lang.contribute_msg_1')</h3>
     
     <hr>
     <form method="post" action="{{route('forum.store')}}">
     @csrf
       <div class="form-group pt-3">
-        <input type="text" class="form-control" id="title" name="title" placeholder="title for the alien message">
+        <input type="text" class="form-control" id="title" name="title" placeholder="@lang('lang.input_title')">
       </div>
 
       <div class="form-group pt-3">
-        <textarea class="form-control" id="article" rows="3" name="article" placeholder="write to the aliens"></textarea>
+        <textarea class="form-control" id="article" rows="3" name="article" placeholder="@lang('lang.input_article')"></textarea>
       </div>
 
       <div class="form-group pt-3">
-          <input type="submit" value="submit" >
+          <input type="submit" value="@lang('lang.submit')" >
       </div>
 
     </form>
@@ -29,7 +30,7 @@
 
 <div class="container mt-5">
 
-<h3>Things I wrote for the aliens</h3>
+<h3>@lang('lang.view_user_articles')</h3>
     
 <hr>
 
@@ -41,14 +42,14 @@
             <div class="card">
 
               <div class="card-header">
-                <p>Title: {{ $article->title }}</p>
+                <p>@lang('lang.title_label'): {{ $article->title }}</p>
               </div>
 
               <div class="card-body">
-                <p>Your message:</p>
+                <p>@lang('lang.message_label'):</p>
                 <p>{{ $article->article }}</p>
 
-                <button><a href="{{route('forum.edit', $article->id)}}">edit</a></button>
+                <button><a href="{{route('forum.edit', $article->id)}}">@lang('lang.edit')</a></button>
 
                 
               </div>

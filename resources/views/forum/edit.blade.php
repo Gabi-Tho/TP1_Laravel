@@ -5,24 +5,36 @@
 
 <div class="container mt-5">
 
-      <div class="row pt-2">
-        <div class="col">
-            <div class="card">
+      <form method="post" >
+                    @csrf
+                    @method('put')
 
-              <div class="card-header">
-                <p>Title: {{ $article->title }}</p>
+        <div class="row pt-2">
+          <div class="col">
+              <div class="card">
+
+                <div class="card-header  text-center">
+                  <p>Title</p>
+                  <input type="text" id="title" name="title" value="" placeholder="{{ $article->title }}">
+
+                </div>
+
+                <div class="card-body  text-center">
+                  <p>Your message:</p>
+                  <div class="form-group text-center">
+                    <textarea id="article" name="article" >{{ $article->article }}</textarea>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" value="edit" class="">
+                    <button type="button"  data-bs-toggle="modal" data-bs-target="#deleteModal">Effacer</button> 
+                  </div>
+                </div>
+                
               </div>
-
-              <div class="card-body">
-                <p>Your message:</p>
-                <p>{{ $article->article }}</p>
-
-                <button><a href="{{route('forum.edit', $article->id)}}">edit</a></button>   
-                <button type="button"  data-bs-toggle="modal" data-bs-target="#deleteModal">Effacer</button>             
-              </div>
-            </div>
+          </div>
         </div>
-      </div>
+
+      </form>
 
 </div>
 
@@ -40,10 +52,10 @@
         Etes-vous certain de vouloir effacer cette donnée?
       </div>
       <div class="modal-footer">
-        <form action="{{route('forum.store')}}" method="post">
+        <form action="{{ route('forum.edit', $article->id) }}" method="post">
                 @csrf
                 @method('delete')
-            <input type="submit" class="" value="Effacer">
+            <input type="submit" class="btn btn-danger" value="Effacer">
         </form>
       </div>
     </div>

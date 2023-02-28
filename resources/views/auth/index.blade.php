@@ -1,9 +1,5 @@
 @extends('layouts.app')
-
-
 @section('content')
-
-
 
 <section class="vh-60" style="background-color:#1aaf00">
   <div class="container py-5 h-60" >
@@ -23,7 +19,7 @@
                 
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                    <span class="h1 fw-bold mb-0">Login</span>
+                    <span class="h1 fw-bold mb-0">@lang('lang.login')</span>
                   </div>
                   @if(session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -40,7 +36,7 @@
                     @endforeach
                   @endif
 
-                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your accountz</h5>
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">@lang('lang.message_login')</h5>
                   <div class="form-outline mb-4">
                   @if($errors->has('email'))
 
@@ -50,7 +46,7 @@
                   @endif
 
                     <input type="email" id="email" class="form-control form-control-lg" name="email"/>
-                    <label class="form-label" for="form2Example17">Email address</label>
+                    <label class="form-label" for="form2Example17">@lang('lang.email')</label>
 
                   </div>
 
@@ -63,12 +59,12 @@
                   @endif
 
                     <input type="password" id="password" class="form-control form-control-lg" name="password" />
-                    <label class="form-label" for="form2Example27">Password</label>
+                    <label class="form-label" for="form2Example27">@lang('lang.password')</label>
 
                   </div>
 
                   <div class="pt-1 mb-4">
-                    <input class="btn btn-dark btn-lg btn-block" type="submit" value="please just work"></input>
+                    <input class="btn btn-dark btn-lg btn-block" type="submit" value="@lang('lang.submit')"></input>
                   </div>
 
 
