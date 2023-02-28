@@ -21,7 +21,7 @@ return [
 'input_article' => 'write to the aliens',
 'submit' => 'submit',
 'edit' => 'edit',
-'password' => 'mot de passe',
+'password' => 'password',
 'title_label' => 'title',
 'message_label' => 'your message',
 'message_login' => 'sign in to your account',
